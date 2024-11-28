@@ -1,4 +1,4 @@
-{
+  {
     "version": 2,
     "builds": [
       {
@@ -12,10 +12,6 @@
         "dest": "/server.js"
       }
     ],
-    "public": [
-      "public/css/*.css",
-      "public/js/*.js",
-      "public/assets/*",
-      "public/**/*"
-    ]
+    "public": true
   }
+
