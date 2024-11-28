@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illume Task-easier(Taskmgt)</title>
+    <link rel="stylesheet" href="./css/page.css">
+</head>
+<body>
+    <main>
+            <div class="task-manager">
+                <nav>
+                    <ul>
+                        <li><a href="./dashboard.html">Dashboard</a></li>
+                        <li><a href="./page.html">Task Page</a></li>
+                        <li><a href="#">Completed</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="./signin.html">Logout</a></li>
+                    </ul>
+                </nav>
+                <header>
+                    <h1>Welcome To Illume Task-easier</h1>
+                    <h2>Stay on top of your deadlines with ease!</h2>
+                    <h3>Manage Your Tasks</h3>
+                    <button id="add-task-btn">+ Add Task</button>
+                </header>
+
+                <section class="task-summary">
+                    <div class="card">
+                      <h3>Total Tasks</h3>
+                      <p id="total-tasks">0</p>
+                    </div>
+                    <div class="card">
+                      <h3>In Progress</h3>
+                      <p id="in-progress-tasks">0</p>
+                    </div>
+                    <div class="card">
+                      <h3>Completed</h3>
+                      <p id="completed-tasks">0</p>
+                    </div>
+                </section>
+
+                <section class="task-list">
+                    <h2>Task List</h2>
+                    <ul id="task-container">
+                      <!-- for task to be added -->
+                    </ul>
+                  </section>
+
+            </div>
+        </div>
+    </main>
+   
+    <div id="task-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add/Edit Task</h2>
+            <form id="task-form">
+                <label for="task-name">Task Name</label>
+                <input type="text" id="task-name" placeholder="Enter task name" required>
+        
+                <label for="task-priority">Priority</label>
+                <select id="task-priority">
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+        
+                <label for="task-status">Status</label>
+                <select id="task-status">
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+        
+                <label for="task-deadline">Deadline</label>
+                <input type="date" id="task-deadline" required>
+        
+                <button type="submit" id="save-task-btn">Save Task</button>
+            </form>
+        </div>
+    </div>
+    <script src="./js/page.js"></script>
+    <script src=""></script>
+</body>
+</html>
