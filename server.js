@@ -16,12 +16,11 @@ app.use(express.json());
 // MongoDB Connection
 const url = `mongodb+srv://3mtt_db:3mtt_db@atlascluster.4wgmr.mongodb.net/pheebee_project2`
 //  mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project', {})
-console.log("type is : " ,typeof url)
+
 mongoose
 .connect(url)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
-
 
 //User Schema
 const userSchema = new mongoose.Schema({
@@ -98,11 +97,11 @@ app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-// for environment variables
-require('dotenv').config();
+// // for environment variables
+// require('dotenv').config();
 
-const uri = process.env.MONGODB_URI;
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Error connecting to MongoDB:', err));
+// const uri = process.env.MONGODB_URI;
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('Connected to MongoDB'))
+//   .catch(err => console.error('Error connecting to MongoDB:', err));
 
