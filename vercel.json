@@ -1,3 +1,4 @@
+
 {
     "version": 2,
     "builds": [
@@ -22,17 +23,6 @@
       {
         "source": "/assets/(.*)",
         "destination": "/public/assets/$1"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/css/(.*)",
-        "headers": [
-          {
-            "key": "Content-Type",
-            "value": "text/css"
-          }
-        ]
       }
     ]
   }
