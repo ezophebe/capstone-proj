@@ -15,14 +15,27 @@ app.use(express.json());
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // MongoDB Connection
-const url = `mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project`
+//const url = `mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project`
 //  mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project', {})
+//mongoose
+//.connect(url)
+ // .then(() => console.log('Connected to MongoDB'))
+ // .catch(err => console.error('MongoDB connection error:', err));
+
+
+// MongoDB Connection
+const url = 'mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project';
+
 mongoose
-.connect(url)
+  .connect(url) 
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
+
+
 
 //User Schema
 const userSchema = new mongoose.Schema({
@@ -89,7 +102,12 @@ app.get('/signin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'signin.html')); // Adjust the file path
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/signin.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'signin.html'));
+});
+
+
+app.get('/dashboard.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'dashboard.html')); // Adjust the file path
 });
 
