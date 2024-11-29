@@ -14,11 +14,11 @@ app.use(express.json());
 // Serve static files from the "public" directory
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
+app.use('/assets', express.static(path.join(__dirname, 'public/assets')));
 
 // MongoDB Connection
-const url = `mongodb+srv://3mtt_db:3mtt_db@atlascluster.4wgmr.mongodb.net/pheebee_project2`
+const url = `mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project`
 //  mongoose.connect('mongodb+srv://ezophebe91:1I1Bg3prnBLfmKKM@cluster0.eyrsx.mongodb.net/capstone-project', {})
-
 mongoose
 .connect(url)
   .then(() => console.log('Connected to MongoDB'))
