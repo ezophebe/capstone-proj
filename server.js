@@ -10,8 +10,10 @@ const app = express();
 // Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // Serve static files like CSS, images, etc.
 app.use(express.json());
+// Serve static files from the "public" directory
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/js', express.static(path.join(__dirname, 'public/js')));
 
 // MongoDB Connection
 const url = `mongodb+srv://3mtt_db:3mtt_db@atlascluster.4wgmr.mongodb.net/pheebee_project2`
